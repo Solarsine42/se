@@ -16,11 +16,12 @@ import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
-import MailIcon from "@material-ui/icons/Mail";
 import DirectionsCarIcon from "@material-ui/icons/DirectionsCar";
 import BeachAccessIcon from "@material-ui/icons/BeachAccess";
 import HomeIcon from "@material-ui/icons/Home";
 import MonetizationOnIcon from "@material-ui/icons/MonetizationOn";
+import LiveHelpIcon from "@material-ui/icons/LiveHelp";
+import MoodBadIcon from "@material-ui/icons/MoodBad";
 
 const drawerWidth = 240;
 
@@ -191,9 +192,21 @@ export default function PersistentDrawerLeft() {
         <List>
           <ListItem button>
             <ListItemIcon>
-              <MailIcon />
+              <LiveHelpIcon />
             </ListItemIcon>
-            <ListItemText primary="thing" />
+            <ListItemText primary="Claims FAQs" />
+          </ListItem>
+          <ListItem button>
+            <ListItemIcon>
+              <LiveHelpIcon />
+            </ListItemIcon>
+            <ListItemText primary="Contract FAQs" />
+          </ListItem>
+          <ListItem button>
+            <ListItemIcon>
+              <MoodBadIcon />
+            </ListItemIcon>
+            <ListItemText primary="Coverage Dispute Process" />
           </ListItem>
         </List>
       </Drawer>
