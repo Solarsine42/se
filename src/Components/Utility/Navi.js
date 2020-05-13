@@ -23,6 +23,17 @@ import MonetizationOnIcon from "@material-ui/icons/MonetizationOn";
 import LiveHelpIcon from "@material-ui/icons/LiveHelp";
 import MoodBadIcon from "@material-ui/icons/MoodBad";
 
+import { Route, Switch } from "react-router-dom";
+import Home from "./Home";
+import AutoLiability from "../Views/Auto/AutoLiability";
+import AutoExtras from "../Views/Auto/AutoExtras";
+import AutoMedical from "../Views/Auto/AutoMedical";
+import AutoPDC from "../Views/Auto/AutoPDC";
+import AutoLandingPage from "../Views/Auto/AutoLandingPage";
+import HomeownersLandingPage from "../Views/Homeowners/HomeownersLandingPage";
+import UmbrellaLandingPage from "../Views/Umbrella/UmbrellaLandingPage";
+import VPPLandingPage from "../Views/VPP/VPPLandingPage";
+
 const drawerWidth = 240;
 
 const useStyles = makeStyles((theme) => ({
@@ -152,9 +163,7 @@ export default function PersistentDrawerLeft() {
               <DirectionsCarIcon />
             </ListItemIcon>
             <ListItemText>
-              <Link to="/auto" onClick={handleDrawerClose}>
-                Auto
-              </Link>
+              <Link to="/auto">Auto</Link>
             </ListItemText>
           </ListItem>
           <ListItem>
@@ -162,9 +171,7 @@ export default function PersistentDrawerLeft() {
               <HomeIcon />
             </ListItemIcon>
             <ListItemText>
-              <Link to="/homeowners" onClick={handleDrawerClose}>
-                Homeowners
-              </Link>
+              <Link to="/homeowners">Homeowners</Link>
             </ListItemText>
           </ListItem>
           <ListItem>
@@ -172,9 +179,7 @@ export default function PersistentDrawerLeft() {
               <BeachAccessIcon />
             </ListItemIcon>
             <ListItemText>
-              <Link to="/umbrella" onClick={handleDrawerClose}>
-                Umbrella
-              </Link>
+              <Link to="/umbrella">Umbrella</Link>
             </ListItemText>
           </ListItem>
           <ListItem>
@@ -182,9 +187,7 @@ export default function PersistentDrawerLeft() {
               <MonetizationOnIcon />
             </ListItemIcon>
             <ListItemText>
-              <Link to="/vpp" onClick={handleDrawerClose}>
-                VPP
-              </Link>
+              <Link to="/vpp">VPP</Link>
             </ListItemText>
           </ListItem>
         </List>
@@ -216,6 +219,21 @@ export default function PersistentDrawerLeft() {
         })}
       >
         <div className={classes.drawerHeader} />
+        <main>
+          <Switch>
+            <Route exact path="/" component={Home} />
+            {/* Auto routes linked */}
+            <Route path="/auto" component={AutoLandingPage} />
+            <Route path="/auto_liability" component={AutoLiability} />
+            <Route path="/auto_medical" component={AutoMedical} />
+            <Route path="/auto_pdc" component={AutoPDC} />
+            <Route path="/auto_extras" component={AutoExtras} />
+
+            <Route path="/homeowners" component={HomeownersLandingPage} />
+            <Route path="/umbrella" component={UmbrellaLandingPage} />
+            <Route path="/vpp" component={VPPLandingPage} />
+          </Switch>
+        </main>
       </main>
     </div>
   );
